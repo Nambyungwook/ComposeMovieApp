@@ -11,12 +11,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import kr.co.nbw.composemovieapp.ui.theme.ComposeMovieAppTheme
+import kr.co.nbw.composemovieapp.ui.theme.color.ColorSet
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposeMovieAppTheme {
+            ComposeMovieAppTheme(
+                myColors = ColorSet.Red
+            ) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -40,7 +43,9 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    ComposeMovieAppTheme {
+    ComposeMovieAppTheme(
+        myColors = ColorSet.Red
+    ) {
         Greeting("Android")
     }
 }

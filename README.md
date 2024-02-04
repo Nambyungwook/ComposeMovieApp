@@ -11,3 +11,10 @@ ComposeMovieApp
 * Retrofit
 * Gson
 * Lifecycle
+
+프로젝트 구조(app module)
+---------------------
+
+* features
+* libraries
+* ui
