@@ -6,6 +6,7 @@ import androidx.compose.material3.Shapes
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.staticCompositionLocalOf
 import kr.co.nbw.composemovieapp.ui.theme.color.ColorSet
 import kr.co.nbw.composemovieapp.ui.theme.color.MyColors
@@ -35,3 +36,8 @@ fun ComposeMovieAppTheme(
         )
     }
 }
+
+val MaterialTheme.myColorScheme: MyColors
+    @Composable
+    @ReadOnlyComposable
+    get() = LocalColors.current

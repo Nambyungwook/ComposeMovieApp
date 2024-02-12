@@ -29,9 +29,9 @@ sealed class ColorSet {
         override var LightColors = MyColors(
             material = lightColorScheme(
                 primary = Red700,
-//                primaryVariant = Red800,
+                primaryContainer = Red800,
                 secondary = Purple900,
-//                secondaryVariant = Purple700,
+                secondaryContainer = Purple700,
                 surface = White,
                 onSurface = Black,
                 background = White,
@@ -47,9 +47,9 @@ sealed class ColorSet {
         override var DarkColors = MyColors(
             material = darkColorScheme(
                 primary = Purple900,
-//                primaryVariant = Red800,
+                primaryContainer = Red800,
                 secondary = Purple900,
-//                secondaryVariant = Purple700,
+                secondaryContainer = Purple700,
                 surface = White,
                 onSurface = Black,
                 background = White,
@@ -64,9 +64,9 @@ sealed class ColorSet {
         override var LightColors = MyColors(
             material = lightColorScheme(
                 primary = Blue400,
-//                primaryVariant = Purple400,
+                primaryContainer = Purple400,
                 secondary = Red900,
-//                secondaryVariant = Red700,
+                secondaryContainer = Red700,
                 surface = White,
                 onSurface = Purple900,
                 background = White,
@@ -82,9 +82,9 @@ sealed class ColorSet {
         override var DarkColors = MyColors(
             material = darkColorScheme(
                 primary = Red900,
-//                primaryVariant = Purple400,
+                primaryContainer = Purple400,
                 secondary = Blue400,
-//                secondaryVariant = Purple900,
+                secondaryContainer = Purple900,
                 surface = White,
                 onSurface = Purple900,
                 background = White,
