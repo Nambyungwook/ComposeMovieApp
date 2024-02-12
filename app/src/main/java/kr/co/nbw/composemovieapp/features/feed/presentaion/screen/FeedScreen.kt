@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -23,11 +22,15 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -48,17 +51,15 @@ val COMMON_HORIZONTAL_PADDING = Paddings.medium
 fun FeedScreen(
     feedStateHolder: State<FeedState>,
     input: IFeedViewModelInput,
-//    buttonColor: State<Color>,
-//    changeAppColor: () -> Unit
+    buttonColor: State<Color>,
+    changeAppColor: () -> Unit
 ) {
-//    val btnColor by remember { buttonColor }
+    val btnColor by remember { buttonColor }
 
     Scaffold(
         topBar = {
             TopAppBar(
-                modifier = Modifier
-                    .background(MaterialTheme.colorScheme.primaryContainer)
-                    .requiredHeight(70.dp),
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primary),
                 title = {
                     Text(
                         modifier = Modifier.padding(
@@ -70,8 +71,8 @@ fun FeedScreen(
                 },
                 actions = {
                     AppBarMenu(
-//                        btnColor = btnColor,
-//                        changeAppColor = changeAppColor,
+                        btnColor = btnColor,
+                        changeAppColor = changeAppColor,
                         input = input
                     )
                 }
@@ -89,8 +90,8 @@ fun FeedScreen(
 
 @Composable
 fun AppBarMenu(
-//    btnColor: Color,
-//    changeAppColor: () -> Unit,
+    btnColor: Color,
+    changeAppColor: () -> Unit,
     input: IFeedViewModelInput
 ) {
     Row(
@@ -100,14 +101,14 @@ fun AppBarMenu(
     ) {
         IconButton(
             onClick = {
-//                changeAppColor()
+                changeAppColor()
             }
         ) {
             Box(
                 modifier = Modifier
                     .size(40.dp)
                     .clip(CircleShape)
-//                    .background(color = btnColor)
+                    .background(color = btnColor)
             )
         }
 

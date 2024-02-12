@@ -23,7 +23,6 @@ import androidx.compose.ui.unit.dp
 import kr.co.nbw.composemovieapp.ui.models.buttons.LeadingIconData
 import kr.co.nbw.composemovieapp.ui.theme.ComposeMovieAppTheme
 import kr.co.nbw.composemovieapp.ui.theme.Paddings
-import kr.co.nbw.composemovieapp.ui.theme.color.ColorSet
 import kr.co.nbw.composemovieapp.ui.theme.myColorScheme
 
 val LEADING_ICON_SIZE = 24.dp
@@ -75,7 +74,7 @@ fun PrimaryButton(
 @Preview
 @Composable
 fun PrimaryButtonPreview() {
-    ComposeMovieAppTheme(myColors = ColorSet.Red) {
+    ComposeMovieAppTheme() {
         PrimaryButton(
             text = "SUBMIT"
         ) {

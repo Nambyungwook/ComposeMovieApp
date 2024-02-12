@@ -16,7 +16,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import kr.co.nbw.composemovieapp.ui.theme.ComposeMovieAppTheme
 import kr.co.nbw.composemovieapp.ui.theme.Paddings
-import kr.co.nbw.composemovieapp.ui.theme.color.ColorSet
 import kr.co.nbw.composemovieapp.ui.theme.myColorScheme
 
 @Composable
@@ -53,7 +52,7 @@ fun SecondaryBorderlessButton(
 @Preview
 @Composable
 fun SecondaryBorderlessButtonPreview() {
-    ComposeMovieAppTheme(myColors = ColorSet.Red) {
+    ComposeMovieAppTheme() {
         SecondaryBorderlessButton(
             text = "CANCEL"
         ) {

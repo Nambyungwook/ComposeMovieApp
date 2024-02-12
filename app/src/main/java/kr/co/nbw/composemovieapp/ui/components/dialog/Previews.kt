@@ -6,12 +6,11 @@ import kr.co.nbw.composemovieapp.R
 import kr.co.nbw.composemovieapp.ui.models.buttons.LeadingIconData
 import kr.co.nbw.composemovieapp.ui.models.dialog.DialogButton
 import kr.co.nbw.composemovieapp.ui.theme.ComposeMovieAppTheme
-import kr.co.nbw.composemovieapp.ui.theme.color.ColorSet
 
 @Preview
 @Composable
 fun AlertPreview() {
-    ComposeMovieAppTheme(myColors = ColorSet.Red) {
+    ComposeMovieAppTheme() {
         DialogPopup.Alert(
             title = "Title",
             bodyText = "blah balh blah",
@@ -25,7 +24,7 @@ fun AlertPreview() {
 @Preview
 @Composable
 fun DefaultPreview() {
-    ComposeMovieAppTheme(myColors = ColorSet.Red) {
+    ComposeMovieAppTheme() {
         DialogPopup.Default(
             title = "Title",
             bodyText = "blah balh blah",
@@ -40,7 +39,7 @@ fun DefaultPreview() {
 @Preview
 @Composable
 fun RatingPreview() {
-    ComposeMovieAppTheme(myColors = ColorSet.Red) {
+    ComposeMovieAppTheme() {
         DialogPopup.Rating(
             movieName = "The Lord of the Rings: The Two Towers",
             rating = 7.5f,

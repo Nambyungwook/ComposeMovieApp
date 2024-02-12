@@ -16,7 +16,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import kr.co.nbw.composemovieapp.ui.theme.ComposeMovieAppTheme
 import kr.co.nbw.composemovieapp.ui.theme.Paddings
-import kr.co.nbw.composemovieapp.ui.theme.color.ColorSet
 import kr.co.nbw.composemovieapp.ui.theme.myColorScheme
 import kr.co.nbw.composemovieapp.ui.theme.underlinedDialogButton
 
@@ -54,7 +53,7 @@ fun UnderlinedTextButton(
 @Preview
 @Composable
 fun UnderlinedTextButtonPreview() {
-    ComposeMovieAppTheme(myColors = ColorSet.Red) {
+    ComposeMovieAppTheme() {
         UnderlinedTextButton(
             text = "CANCEL"
         ) {

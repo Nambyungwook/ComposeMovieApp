@@ -18,7 +18,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kr.co.nbw.composemovieapp.ui.theme.ComposeMovieAppTheme
 import kr.co.nbw.composemovieapp.ui.theme.Paddings
-import kr.co.nbw.composemovieapp.ui.theme.color.ColorSet
 import kr.co.nbw.composemovieapp.ui.theme.myColorScheme
 
 @Composable
@@ -59,7 +58,7 @@ fun SecondaryButton(
 @Preview
 @Composable
 fun SecondaryButtonPreview() {
-    ComposeMovieAppTheme(myColors = ColorSet.Red) {
+    ComposeMovieAppTheme() {
         SecondaryButton(
             text = "CANCEL"
         ) {

@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.ComposeView
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -15,15 +14,15 @@ import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import kr.co.nbw.composemovieapp.BaseFragment
 import kr.co.nbw.composemovieapp.features.feed.presentaion.output.FeedUiEffect
 import kr.co.nbw.composemovieapp.features.feed.presentaion.screen.FeedScreen
 import kr.co.nbw.composemovieapp.features.feed.presentaion.viewmodel.FeedViewModel
 import kr.co.nbw.composemovieapp.ui.navigation.safeNavigate
 import kr.co.nbw.composemovieapp.ui.theme.ComposeMovieAppTheme
-import kr.co.nbw.composemovieapp.ui.theme.color.ColorSet
 
 @AndroidEntryPoint
-class FeedFragment: Fragment() {
+class FeedFragment: BaseFragment() {
 
     private val viewModel: FeedViewModel by viewModels()
 
@@ -36,10 +35,14 @@ class FeedFragment: Fragment() {
 
         return ComposeView(requireContext()).apply {
             setContent {
-                ComposeMovieAppTheme(myColors = ColorSet.Red) {
+                ComposeMovieAppTheme(
+                    themeState = themeViewModel.themeState.collectAsState()
+                ) {
                     FeedScreen(
                         feedStateHolder = viewModel.output.feedState.collectAsState(),
                         input = viewModel.input,
+                        buttonColor = themeViewModel.nextColorState.collectAsState(),
+                        changeAppColor = { themeViewModel.toggleColorSet() }
                     )
                 }
             }

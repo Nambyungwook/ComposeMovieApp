@@ -21,7 +21,6 @@ import kr.co.nbw.composemovieapp.ui.models.dialog.DialogText
 import kr.co.nbw.composemovieapp.ui.models.dialog.DialogTitle
 import kr.co.nbw.composemovieapp.ui.theme.ComposeMovieAppTheme
 import kr.co.nbw.composemovieapp.ui.theme.Paddings
-import kr.co.nbw.composemovieapp.ui.theme.color.ColorSet
 import kr.co.nbw.composemovieapp.ui.theme.myColorScheme
 
 @Composable
@@ -66,7 +65,7 @@ fun BaseDialogPopup(
 @Preview
 @Composable
 fun BaseDialogPopupPreview() {
-    ComposeMovieAppTheme(myColors = ColorSet.Red) {
+    ComposeMovieAppTheme() {
         BaseDialogPopup(
             dialogTitle = DialogTitle.Header("TITLE"),
             dialogContent = DialogContent.Large(
@@ -82,7 +81,7 @@ fun BaseDialogPopupPreview() {
 @Preview
 @Composable
 fun BaseDialogPopupPreview2() {
-    ComposeMovieAppTheme(myColors = ColorSet.Red) {
+    ComposeMovieAppTheme() {
         BaseDialogPopup(
             dialogTitle = DialogTitle.Large("TITLE"),
             dialogContent = DialogContent.Default(
@@ -99,7 +98,7 @@ fun BaseDialogPopupPreview2() {
 @Preview
 @Composable
 fun BaseDialogPopupPreview3() {
-    ComposeMovieAppTheme(myColors = ColorSet.Red) {
+    ComposeMovieAppTheme() {
         BaseDialogPopup(
             dialogTitle = DialogTitle.Large("TITLE"),
             dialogContent = DialogContent.Rating(

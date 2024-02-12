@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.navigation.fragment.navArgs
@@ -16,7 +17,6 @@ import kr.co.nbw.composemovieapp.ui.components.dialog.Rating
 import kr.co.nbw.composemovieapp.ui.models.buttons.LeadingIconData
 import kr.co.nbw.composemovieapp.ui.models.dialog.DialogButton
 import kr.co.nbw.composemovieapp.ui.theme.ComposeMovieAppTheme
-import kr.co.nbw.composemovieapp.ui.theme.color.ColorSet
 
 @AndroidEntryPoint
 class RatingDialogFragment : BaseDialogFragment() {
@@ -38,8 +38,7 @@ class RatingDialogFragment : BaseDialogFragment() {
             setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
             setContent {
                 ComposeMovieAppTheme(
-                    myColors = ColorSet.Red,
-//                    themeState = themeViewModel.themeState.collectAsState()
+                    themeState = themeViewModel.themeState.collectAsState()
                 ) {
                     DialogPopup.Rating(
                         movieName = args.movieName,

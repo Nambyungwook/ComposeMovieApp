@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.ComposeView
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -16,15 +15,15 @@ import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import kr.co.nbw.composemovieapp.BaseFragment
 import kr.co.nbw.composemovieapp.features.detail.presentation.MovieDetailScreen
 import kr.co.nbw.composemovieapp.features.detail.presentation.output.DetailUiEffect
 import kr.co.nbw.composemovieapp.features.detail.presentation.viewmodel.MovieDetailViewModel
 import kr.co.nbw.composemovieapp.ui.navigation.safeNavigate
 import kr.co.nbw.composemovieapp.ui.theme.ComposeMovieAppTheme
-import kr.co.nbw.composemovieapp.ui.theme.color.ColorSet
 
 @AndroidEntryPoint
-class DetailFragment: Fragment() {
+class DetailFragment: BaseFragment() {
 
     private val viewModel: MovieDetailViewModel by viewModels()
     private val args: DetailFragmentArgs by navArgs()
@@ -38,7 +37,9 @@ class DetailFragment: Fragment() {
 
         return ComposeView(requireContext()).apply {
             setContent {
-                ComposeMovieAppTheme(myColors = ColorSet.Red) {
+                ComposeMovieAppTheme(
+                    themeState = themeViewModel.themeState.collectAsState()
+                ) {
                     MovieDetailScreen(
                         movieDetailState = viewModel.outputs.detailState.collectAsState(),
                         input = viewModel.inputs
